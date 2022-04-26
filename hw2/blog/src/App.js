@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import UserBar from './UserBar'
-import PostList from "./PostList"
-import CreatePost from "./CreatePost"
+import TodoList from "./TodoList"
+import CreateTodo from "./CreateTodo"
 function App() {
 
   const [user, setUser] = useState("")
@@ -9,13 +9,13 @@ function App() {
   //   title: "A blog post 2", content: "Blog content 2", author: "Chip"
   // }, { title: "A blog post 3", content: "Blog content 3", author: "Chip" }]
 
-  const [posts, setPosts] = useState([])
+  const [todos, setTodos] = useState([])
 
   return (
     <div>
       <UserBar user={user} setUser={setUser} />
-      {user && <CreatePost user={user} setPosts={setPosts} posts={posts} />}
-      <PostList posts={posts} />
+      {user && <CreateTodo user={user} setTodos={setTodos} todos={todos} />}
+      <TodoList todos={todos} />
     </div>
   );
 }
