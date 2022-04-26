@@ -23,7 +23,7 @@ export default function CreatePost({ user, setTodos, todos }) {
 
         <div>
           <label htmlFor="create-title">Title:</label>
-          <input type="text" name="create-title" id="create-title" value={title} onChange={handleTitle} />
+          <input type="text" name="create-title" id="create-title" value={title} onChange={handleTitle} required />
         </div>
 
         <div>
