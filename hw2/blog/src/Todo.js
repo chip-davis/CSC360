@@ -4,6 +4,9 @@ export default function Todo({ title, content, author }) {
 
   const dateCreated = new Date(Date.now()).toUTCString();
   const [completed, setCompleted] = useState(false);
+
+  function handleComplete(evt) { setCompleted(true) }
+
   return (
     <div>
       <h3>{title}</h3>
@@ -16,7 +19,7 @@ export default function Todo({ title, content, author }) {
       <div>Date completed: {completed && new Date(Date.now()).toUTCString()}</div>
       <br />
 
-      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+      <div>Complete? <input type="checkbox" onChange={handleComplete} /> </div>
 
     </div>
   )
