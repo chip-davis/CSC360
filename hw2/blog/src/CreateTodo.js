@@ -4,10 +4,12 @@ export default function CreatePost({ user, setTodos, todos }) {
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
 
+  const dateCreated = new Date(Date.now()).toUTCString();
+
   function handleTitle(evt) { setTitle(evt.target.value) }
   function handleContent(evt) { setContent(evt.target.value) }
   function handleCreate() {
-    const newTodo = { title, content, author: user }
+    const newTodo = { title, content, author: user, dateCreated: dateCreated }
     setTodos([newTodo, ...todos])
   }
 

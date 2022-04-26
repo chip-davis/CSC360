@@ -1,20 +1,8 @@
 import React, { useState } from "react";
 
-export default function Todo({ title, content, author }) {
+export default function Todo({ title, content, author, dateCreated }) {
 
-  const dateCreated = new Date(Date.now()).toUTCString();
   const [completed, setCompleted] = useState(false);
-
-  // function handleComplete(evt) {
-  //   if ({ completed }) {
-  //     console.log("set to true")
-  //     setCompleted(true)
-  //   } else {
-  //     console.log("set to false")
-  //     setCompleted(false)
-  //   }
-  // }
-
 
   const toggleChecked = () => setCompleted(value => !value);
 
