@@ -10,7 +10,7 @@ export default function Register({ dispatchUser }) {
   function handlePasswordRepeat(evt) { setPasswordRepeat(evt.target.value); }
 
   return (
-    <form onSubmit={(e) => { e.preventDefault(); dispatchUser(username); }}>
+    <form onSubmit={(e) => { e.preventDefault(); dispatchUser({ type: 'REGISTER', username }); }}>
       <label htmlFor="register-username">Username:</label>
       <input type="text" name="register-username" id="register-username" value={username} onChange={handleUsername} />
 
