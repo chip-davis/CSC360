@@ -1,41 +1,34 @@
 {
-    "todos": [
-      { 
-        "title": "My First Todo",
-        "content": "Some content",
-        "author": "chip",
-        "dateCreated": 1652210137940,
-        "dateCompleted": null,
-        "completed": false,
-        "id": 1 
-      },
-      {
-        "title": "test",
-        "content": "test",
-        "author": "test",
-        "dateCreated": 1652211742966,
-        "completed": false,
-        "id": 2 
-      },
-      {
-        "title": "test2",
-        "content": "test",
-        "author": "test",
-        "dateCreated": 1652211752072,
-        "completed": false,
-        "id": 3 
-      }
-    ],
-    "users": [
-      {
-        "id": 1,
-        "username": "chip",
-        "password": "chip"
-      },
-      {
-        "username": "test",
-        "password": "pass",
-        "id": 2
-      }
-    ]
-  }
+  "todos": [
+    {
+      "title": "My First Todo",
+      "content": "Some content",
+      "author": "chip",
+      "dateCreated": 1652210137940,
+      "dateCompleted": null,
+      "completed": false,
+      "id": 1
+    },
+    {
+      "title": "test",
+      "content": "test",
+      "author": "test",
+      "dateCreated": 1652211742966,
+      "dateCompleted": null,
+      "completed": false,
+      "id": 2
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "chip",
+      "password": "chip"
+    },
+    {
+      "username": "test",
+      "password": "pass",
+      "id": 2
+    }
+  ]
+}
