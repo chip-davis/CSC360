@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 
-export default function CreatePost({ user, setTodos, todos }) {
+export default function CreatePost({ user, dispatch, todos }) {
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
-
-  const dateCreated = new Date(Date.now()).toUTCString();
 
   function handleTitle(evt) { setTitle(evt.target.value) }
   function handleContent(evt) { setContent(evt.target.value) }
   function handleCreate() {
-    const newTodo = { title, content, author: user, dateCreated: dateCreated }
-    setTodos([newTodo, ...todos])
+    // const newTodo = { title, content, author: user, dateCreated: dateCreated }
+    // setTodos([newTodo, ...todos])
+    // dispatchTodos({ type: 'CREATE_POST', title, content, author: user, dateCreated: dateCreated })
+    dispatch({type: 'CREATE_TODO', title, content, author: user, dateCreated: Date.now(), dateCompleted: undefined, completed: false, id: Math.floor(Math.random() * 1000000) })
   }
 
 
