@@ -1,4 +1,5 @@
-import React, { useState, useReducer, useEffect } from "react";
+import React, { useState, useReducer, useEffect, createContext} from "react";
+import { useResource } from "react-request-hook";
 import UserBar from './UserBar'
 import TodoList from "./TodoList"
 import CreateTodo from "./CreateTodo"
@@ -10,13 +11,19 @@ function App() {
 
   const [state, dispatch] = useReducer(appReducer, {user: '', todos: []})
 
-  useEffect(() => {
-    fetch('/api/todos')
-      .then(result => result.json())
-      .then(todos => dispatch({type: "FETCH_TODOS", todos}))
-  }, [])
-  
+  const [todos, getTodos] = useResource(() => ({
+    url: '/todos',
+    method: 'get'
+  }))
 
+  useEffect(getTodos, [])
+
+  useEffect(() => {
+    if (todos && todos.data) {
+      dispatch({type: 'FETCH_TODOS', todos: todos.data})
+    }
+  }, [todos])
+ 
   return (
     <div>
       <UserBar user={state.user} dispatch={dispatch} />
