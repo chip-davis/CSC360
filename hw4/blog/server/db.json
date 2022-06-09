@@ -45,6 +45,16 @@
       "username": "test",
       "password": "pass",
       "id": 2
+    },
+    {
+      "username": "chip",
+      "password": "chip",
+      "id": 3
+    },
+    {
+      "username": "willthiswork",
+      "password": "pass",
+      "id": 4
     }
   ]
 }
