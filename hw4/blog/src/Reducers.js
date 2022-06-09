@@ -28,6 +28,8 @@ function todoReducer(state, action) {
             return action.updatedTodos
         case "TOGGLE_TODO":
             return action.updatedTodos;
+        case "FETCH_TODOS":
+            return action.todos;
         default:
             return state;
     }
